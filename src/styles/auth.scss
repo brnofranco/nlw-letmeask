@@ -58,18 +58,14 @@
             align-self: center;
         }
 
-        .avatar{
+        .user-avatar{
+            margin-top: 16px;
             border-radius: 50%;
-            padding-top: 12px;
-        }
-
-        h1 {
-            margin: 32px 0 0;
         }
 
         h2 {
             font-size: 24px;
-            margin: 48px 0 24px;
+            margin: 64px 0 16px;
             font-family: 'Poppins', sans-serif;
         }
 

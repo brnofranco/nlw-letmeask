@@ -39,7 +39,14 @@ export function Home() {
         const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
         if (!roomRef.exists()) {
-            toast.error("Sala inexistente.")
+            toast.error("Esta sala não existe!")
+            return;
+        }
+
+        if (roomRef.val().endedAt) {
+            toast('Esta sala já fechou!', {
+                icon: '⚠️',
+              });
             return;
         }
 
@@ -48,7 +55,7 @@ export function Home() {
 
     return(
         <div id="page-auth">
-            <div> <Toaster position="top-left" reverseOrder={false} /> </div>
+            <div> <Toaster reverseOrder={false} /> </div>
             <aside>
                 <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
                 <strong> Toda pergunta tem uma resposta </strong> {/* Crie salas de Q&A ao-vivo */}
